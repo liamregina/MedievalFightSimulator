@@ -100,7 +100,7 @@ bool GuessingGame(string keyword) {
         string userAllegiance;
         getline(cin, userAllegiance);
 
-        cout << "Choose a number between from 1 to 10" << endl;
+        cout << "Choose a number between from 1 to 20:" << endl;
 
         int baseAttack;
         cin >> baseAttack;
@@ -131,7 +131,7 @@ bool GuessingGame(string keyword) {
         string userElfFamily;
         getline(cin, userElfFamily);
 
-        cout << "Choose a number between from 1 to 10" << endl;
+        cout << "Choose a number between from 1 to 20:" << endl;
 
         int baseAttack;
         cin >> baseAttack;
@@ -189,7 +189,7 @@ bool GuessingGame(string keyword) {
 
         cout << "Your wizard now has a starting rank of 1 + " << rankBonus << ", for a total of " << userRank << "." << endl << endl;
 
-        cout << "Now, choose a number from 1 to 10" << endl;
+        cout << "Now, choose a number from 1 to 20:" << endl;
 
         int baseAttack;
         cin >> baseAttack;
@@ -221,15 +221,15 @@ void GameOver(Character* &userPerson, vector<Character*> &opponentList) {
     cout << "Play Again?" << endl;
 
     cout << "Please Enter Yes or No (Y/N):" << endl;
-    char ynInput;
+    string ynInput;
     cin >> ynInput;
 
-    while (ynInput != 'y' && ynInput != 'n' && ynInput != 'Y' && ynInput != 'N') {
+    while (ynInput != "y" && ynInput != "n" && ynInput != "Y" && ynInput != "N") {
         cout << "Please enter a valid input (Y/N):" << endl;
         cin >> ynInput;
     }
 
-    if (ynInput == 'y' || ynInput == 'Y') {
+    if (ynInput == "y" || ynInput == "Y") {
         // Reset the protagonist/userPerson
         string emptyString = "";
         delete userPerson;
@@ -322,7 +322,7 @@ int main() {
     //FIXME: make it so if same alliance skip attacking the other character
 
 
+    //FIXME: make it so if character wins a congratulatory message is outputted (also output credits message) a game offers to play again or quit
+
     return 0;
 }
-
-    

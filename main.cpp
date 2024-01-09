@@ -79,11 +79,11 @@ bool GuessingGame(string keyword) {
 
     cout << "Choose an option: ";
 
-    unsigned int characterType;
+    string characterType;
     cin >> characterType;
     cout << endl;
 
-    while (characterType != 1 && characterType != 2 && characterType != 3) {    //characterType != (1 && 2 && 3)
+    while (characterType != "1" && characterType != "2" && characterType != "3") {    //characterType != (1 && 2 && 3)
         cout << "Please choose a valid numerical option:" << endl;
         cin >> characterType;
     }
@@ -94,7 +94,7 @@ bool GuessingGame(string keyword) {
 
     Character* userCharacter = nullptr;
 
-    if (characterType == 1) { //Warrior
+    if (characterType == "1") { //Warrior
         
         cout << "Choose a name for your Warrior's Allegiance (e.g. Prince Wales, Queen Victoria, Sir Nottinghham, etc.):" << endl;
         string userAllegiance;
@@ -125,7 +125,7 @@ bool GuessingGame(string keyword) {
 
         ally = userAllegiance;
     }
-    else if (characterType == 2) {//Elf
+    else if (characterType == "2") {//Elf
         cout << "Choose a name for your Elf's family:" << endl;
 
         string userElfFamily;
@@ -317,6 +317,9 @@ int main() {
     GameOver(Protagonist, adventurers); //FIXME: make it so user can rety infinitely many times, I think it will only let user try again one more time
 
     //FIXME: also make it so useers cant enter a nubmer higher than 10
+
+
+    //FIXME: make it so if same alliance skip attacking the other character
 
 
     return 0;
